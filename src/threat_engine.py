@@ -4,12 +4,15 @@ import pandas as pd
 from urllib.parse import urlparse
 from collections import Counter
 import math
+import os
+
 
 # ================================
 # Load Model
 # ================================
 
-data = joblib.load("models/final_rf_model.pkl")
+model_path = os.path.join("models", "final_rf_model.pkl")
+data = joblib.load(model_path)
 model = data["model"]
 threshold = data["threshold"]
 
